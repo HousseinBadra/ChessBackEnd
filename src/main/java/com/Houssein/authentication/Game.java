@@ -1,5 +1,4 @@
 package com.Houssein.authentication;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -8,6 +7,7 @@ public class Game {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long id;
 
     @Column(name = "white_id", nullable = false)
@@ -16,7 +16,13 @@ public class Game {
     @Column(name = "black_id", nullable = false)
     private Long blackId;
 
-    @Column(name = "moves", columnDefinition = "text[]")
+    @Column(name = "white_username", nullable = false)
+    private Long whiteUsername;
+
+    @Column(name = "black_username", nullable = false)
+    private Long blackUserName;
+
+    @Column(name = "moves", columnDefinition = "text[]", nullable = false)
     private String[] moves;
 
     // Constructors
