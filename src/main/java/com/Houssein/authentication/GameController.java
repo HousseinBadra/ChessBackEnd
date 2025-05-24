@@ -33,9 +33,9 @@ public class GameController {
         return ResponseEntity.ok(game);
     }
 
-    @GetMapping("/user/{userId}")
-    public ResponseEntity<List<Game>> getGamesForUser(@PathVariable Long userId) {
-        List<Game> games = gameService.getGamesForUser(userId);
+    @GetMapping("user/{userName}")
+    public ResponseEntity<List<Game>> getGamesForUser(@PathVariable String userName) {
+        List<Game> games = gameService.getGamesForUser(userName);
         return ResponseEntity.ok(games);
     }
 }

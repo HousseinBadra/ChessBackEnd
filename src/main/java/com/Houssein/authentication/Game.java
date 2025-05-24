@@ -10,29 +10,33 @@ public class Game {
     @Column(nullable = false)
     private Long id;
 
-    @Column(name = "white_id", nullable = false)
-    private Long whiteId;
-
-    @Column(name = "black_id", nullable = false)
-    private Long blackId;
-
     @Column(name = "white_username", nullable = false)
-    private Long whiteUsername;
+    private String whiteUsername;
 
     @Column(name = "black_username", nullable = false)
-    private Long blackUserName;
+    private String blackUsername;
 
     @Column(name = "moves", columnDefinition = "text[]", nullable = false)
     private String[] moves;
 
+    public String getWhiteUsername() {
+        return whiteUsername;
+    }
+
+    public void setBlackUsername(String blackUsername) {
+        this.blackUsername = blackUsername;
+    }
+
+    public String getBlackUsername() {
+        return blackUsername;
+    }
+
+    public void setWhiteUsername(String whiteUsername) {
+        this.whiteUsername = whiteUsername;
+    }
+
     // Constructors
     public Game() {}
-
-    public Game(Long whiteId, Long blackId, String[] moves) {
-        this.whiteId = whiteId;
-        this.blackId = blackId;
-        this.moves = moves;
-    }
 
     // Getters and Setters
     public Long getId() {
@@ -41,22 +45,6 @@ public class Game {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getWhiteId() {
-        return whiteId;
-    }
-
-    public void setWhiteId(Long whiteId) {
-        this.whiteId = whiteId;
-    }
-
-    public Long getBlackId() {
-        return blackId;
-    }
-
-    public void setBlackId(Long blackId) {
-        this.blackId = blackId;
     }
 
     public String[] getMoves() {

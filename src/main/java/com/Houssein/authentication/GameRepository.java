@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface GameRepository extends JpaRepository<Game, Long> {
-    List<Game> findByWhiteIdOrBlackId(Long whiteId, Long blackId);
+    List<Game> findByWhiteUsernameOrBlackUsername(String whiteUsername, String blackUsername);
 }
